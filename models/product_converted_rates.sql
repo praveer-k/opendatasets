@@ -1,11 +1,11 @@
 select
-    product_prices.name,
-    product_prices.purchase_date,
-    product_prices.a_price,
-    exchange_rates_2022.base_currency,
-    exchange_rates_2022.target_currency,
-    exchange_rates_2022.exchange_rate * product_prices.a_price as converted_price
-from exchange_rates.product_prices
-left join exchange_rates.exchange_rates_2022
-on product_prices.purchase_date=exchange_rates_2022.date_date 
-    and product_prices.currency=exchange_rates_2022.base_currency 
+    products.name,
+    products.purchase_date,
+    products.a_price,
+    rates.base_currency,
+    rates.target_currency,
+    rates.exchange_rate * products.a_price as converted_price
+from opendatasets-349618.exchange_rates.dim_products as products
+left join opendatasets-349618.exchange_rates.dim_rates as rates
+on products.purchase_date=rates.date_date 
+    and products.currency=rates.base_currency 
