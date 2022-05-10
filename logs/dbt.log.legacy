@@ -78,3 +78,459 @@ There are 1 unused configuration paths:
 2022-05-10 09:08:39.269219 (Thread-17): handling status request
 2022-05-10 09:08:39.271296 (Thread-17): 09:08:39  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'ebac53da-d2dc-4c49-a3b6-1eea60ea58d8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd6c16d850>]}
 2022-05-10 09:08:39.272203 (Thread-17): sending response (<Response 16554 bytes [200 OK]>) to 10.0.41.177
+2022-05-10 09:08:41.816866 (Thread-18): 09:08:41  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+2022-05-10 09:08:41.817044 (Thread-18): 09:08:41  Partial parsing enabled, no changes found, skipping parsing
+2022-05-10 09:08:41.817320 (Thread-18): 09:08:41  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.product_details.marts
+
+2022-05-10 09:08:41.821862 (Thread-18): 09:08:41  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ebac53da-d2dc-4c49-a3b6-1eea60ea58d8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd6c0e9f40>]}
+2022-05-10 09:08:42.547071 (Thread-19): handling status request
+2022-05-10 09:08:42.547484 (Thread-19): 09:08:42  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'ebac53da-d2dc-4c49-a3b6-1eea60ea58d8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd6c1125b0>]}
+2022-05-10 09:08:42.548041 (Thread-19): sending response (<Response 1680 bytes [200 OK]>) to 10.0.41.177
+2022-05-10 09:08:42.593209 (Thread-20): handling status request
+2022-05-10 09:08:42.593500 (Thread-20): 09:08:42  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'ebac53da-d2dc-4c49-a3b6-1eea60ea58d8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd6c112340>]}
+2022-05-10 09:08:42.593939 (Thread-20): sending response (<Response 1680 bytes [200 OK]>) to 10.0.41.177
+2022-05-10 09:08:45.816372 (Thread-21): handling status request
+2022-05-10 09:08:45.816700 (Thread-21): 09:08:45  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'ebac53da-d2dc-4c49-a3b6-1eea60ea58d8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd6c112250>]}
+2022-05-10 09:08:45.817146 (Thread-21): sending response (<Response 1680 bytes [200 OK]>) to 10.0.41.177
+2022-05-10 09:08:46.173267 (Thread-22): handling run_sql request
+2022-05-10 09:08:46.173634 (Thread-22): 09:08:46  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'ebac53da-d2dc-4c49-a3b6-1eea60ea58d8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd6c112070>]}
+2022-05-10 09:08:48.344970 (Thread-22): sending response (<Response 138 bytes [200 OK]>) to 10.0.41.177
+2022-05-10 09:08:48.372215 (MainThread): 09:08:48  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a265cca7-5812-41a7-8be2-25d23a9fe087', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7facf0e6cca0>]}
+2022-05-10 09:08:48.372768 (MainThread): 09:08:48  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 188 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2022-05-10 09:08:48.373360 (Thread-1): 09:08:48  Acquiring new bigquery connection "rpc.product_prices.request"
+2022-05-10 09:08:48.373493 (Thread-1): 09:08:48  Began compiling node rpc.product_prices.request
+2022-05-10 09:08:48.373584 (Thread-1): 09:08:48  Compiling rpc.product_prices.request
+2022-05-10 09:08:48.374777 (Thread-1): 09:08:48  finished collecting timing info
+2022-05-10 09:08:48.374907 (Thread-1): 09:08:48  Began executing node rpc.product_prices.request
+2022-05-10 09:08:48.375023 (Thread-1): 09:08:48  Opening a new connection, currently in state init
+2022-05-10 09:08:48.379661 (Thread-1): 09:08:48  On rpc.product_prices.request: select * from `opendatasets-349618.exchange_rates.product_prices`
+limit 500
+/* limit added automatically by dbt cloud */
+2022-05-10 09:08:48.419408 (Thread-1): 09:08:48  finished collecting timing info
+2022-05-10 09:08:48.419563 (Thread-1): Got an exception: Runtime Error
+  Unable to generate access token, if you're using impersonate_service_account, make sure your initial account has the "roles/iam.serviceAccountTokenCreator" role on the account you are trying to impersonate.
+  
+  ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 174, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 549, in _retry_and_handle
+    return retry.retry_target(
+  File "/usr/local/lib/python3.8/dist-packages/google/api_core/retry.py", line 190, in retry_target
+    return target()
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 378, in fn
+    return self._query_and_results(client, sql, conn, job_params)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 534, in _query_and_results
+    query_job = client.query(sql, job_config=job_config)
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/bigquery/client.py", line 3390, in query
+    future = do_query()
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/bigquery/client.py", line 3367, in do_query
+    query_job._begin(retry=retry, timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/bigquery/job/query.py", line 1298, in _begin
+    super(QueryJob, self)._begin(client=client, retry=retry, timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/bigquery/job/base.py", line 510, in _begin
+    api_response = client._call_api(
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/bigquery/client.py", line 782, in _call_api
+    return call()
+  File "/usr/local/lib/python3.8/dist-packages/google/api_core/retry.py", line 283, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.8/dist-packages/google/api_core/retry.py", line 190, in retry_target
+    return target()
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/_http/__init__.py", line 482, in api_request
+    response = self._make_request(
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/_http/__init__.py", line 341, in _make_request
+    return self._do_request(
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/_http/__init__.py", line 379, in _do_request
+    return self.http.request(
+  File "/usr/local/lib/python3.8/dist-packages/google/auth/transport/requests.py", line 476, in request
+    self.credentials.before_request(auth_request, method, url, request_headers)
+  File "/usr/local/lib/python3.8/dist-packages/google/auth/credentials.py", line 133, in before_request
+    self.refresh(request)
+  File "/usr/local/lib/python3.8/dist-packages/google/oauth2/service_account.py", line 408, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "/usr/local/lib/python3.8/dist-packages/google/oauth2/_client.py", line 193, in jwt_grant
+    response_data = _token_endpoint_request(request, token_uri, body)
+  File "/usr/local/lib/python3.8/dist-packages/google/oauth2/_client.py", line 165, in _token_endpoint_request
+    _handle_error_response(response_data)
+  File "/usr/local/lib/python3.8/dist-packages/google/oauth2/_client.py", line 60, in _handle_error_response
+    raise exceptions.RefreshError(error_details, response_data)
+google.auth.exceptions.RefreshError: ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 389, in execute
+    query_job, iterator = self.raw_execute(sql, fetch=fetch)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 380, in raw_execute
+    query_job, iterator = self._retry_and_handle(msg=sql, conn=conn, fn=fn)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 549, in _retry_and_handle
+    return retry.retry_target(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 191, in exception_handler
+    raise RuntimeException(message)
+dbt.exceptions.RuntimeException: Runtime Error
+  Unable to generate access token, if you're using impersonate_service_account, make sure your initial account has the "roles/iam.serviceAccountTokenCreator" role on the account you are trying to impersonate.
+  
+  ('invalid_grant: Invalid JWT Signature.', {'error': 'invalid_grant', 'error_description': 'Invalid JWT Signature.'})
+2022-05-10 09:08:48.422295 (Thread-1): Got exception RPCException(10001, Runtime error, {'type': 'RuntimeException', 'message': 'Runtime Error in rpc request (from remote system)\n  Unable to generate access token, if you\'re using impersonate_service_account, make sure your initial account has the "roles/iam.serviceAccountTokenCreator" role on the account you are trying to impersonate.\n  \n  (\'invalid_grant: Invalid JWT Signature.\', {\'error\': \'invalid_grant\', \'error_description\': \'Invalid JWT Signature.\'})', 'raw_sql': 'select * from `opendatasets-349618.exchange_rates.product_prices`\nlimit 500\n/* limit added automatically by dbt cloud */', 'compiled_sql': 'select * from `opendatasets-349618.exchange_rates.product_prices`\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10001, Runtime error, {'type': 'RuntimeException', 'message': 'Runtime Error in rpc request (from remote system)\n  Unable to generate access token, if you\'re using impersonate_service_account, make sure your initial account has the "roles/iam.serviceAccountTokenCreator" role on the account you are trying to impersonate.\n  \n  (\'invalid_grant: Invalid JWT Signature.\', {\'error\': \'invalid_grant\', \'error_description\': \'Invalid JWT Signature.\'})', 'raw_sql': 'select * from `opendatasets-349618.exchange_rates.product_prices`\nlimit 500\n/* limit added automatically by dbt cloud */', 'compiled_sql': 'select * from `opendatasets-349618.exchange_rates.product_prices`\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+2022-05-10 09:08:48.665404 (Thread-23): handling poll request
+2022-05-10 09:08:48.665819 (Thread-23): 09:08:48  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'ebac53da-d2dc-4c49-a3b6-1eea60ea58d8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdd6c2a33d0>]}
+2022-05-10 09:08:48.666654 (Thread-23): sending response (<Response 12667 bytes [200 OK]>) to 10.0.41.177
+2022-05-10 09:11:24.949867 (MainThread): Running with dbt=1.0.6
+2022-05-10 09:11:25.095315 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt_rpc.task.server.RPCServerTask'>, debug=None, defer=None, exclude=None, fail_fast=None, host='0.0.0.0', log_cache_events=False, log_format=None, models=None, partial_parse=True, port=8580, printer_width=None, profile='user', profiles_dir='/usr/src/develop/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, send_anonymous_usage_stats=None, single_threaded=False, state=None, static_parser=None, target=None, threads=None, use_colors=None, use_experimental_parser=None, vars='{}', version_check=None, warn_error=None, which='rpc', write_json=None)
+2022-05-10 09:11:25.098513 (MainThread): Tracking: tracking
+2022-05-10 09:11:25.120301 (MainThread): 09:11:25  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f37273776a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f371c11aeb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f371c11adf0>]}
+2022-05-10 09:11:25.120656 (MainThread): Serving RPC server at 0.0.0.0:8580, pid=22
+2022-05-10 09:11:25.120920 (MainThread): Supported methods: ['build', 'cli_args', 'compile', 'compile_sql', 'deps', 'docs.generate', 'gc', 'get-manifest', 'kill', 'list', 'poll', 'ps', 'run', 'run-operation', 'run_sql', 'seed', 'snapshot', 'snapshot-freshness', 'source-freshness', 'status', 'test']
+2022-05-10 09:11:25.121062 (MainThread): Send requests to http://localhost:8580/jsonrpc
+2022-05-10 09:11:25.129996 (Thread-12): 09:11:25  Unable to do partial parsing because profile has changed
+2022-05-10 09:11:25.130277 (Thread-12): 09:11:25  Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f371c11ae20>]}
+2022-05-10 09:11:25.155899 (Thread-12): 09:11:25  Parsing macros/adapters.sql
+2022-05-10 09:11:25.179521 (Thread-12): 09:11:25  Parsing macros/etc.sql
+2022-05-10 09:11:25.181403 (Thread-12): 09:11:25  Parsing macros/catalog.sql
+2022-05-10 09:11:25.186979 (Thread-12): 09:11:25  Parsing macros/materializations/table.sql
+2022-05-10 09:11:25.190775 (Thread-12): 09:11:25  Parsing macros/materializations/seed.sql
+2022-05-10 09:11:25.193282 (Thread-12): 09:11:25  Parsing macros/materializations/incremental.sql
+2022-05-10 09:11:25.207808 (Thread-12): 09:11:25  Parsing macros/materializations/copy.sql
+2022-05-10 09:11:25.210374 (Thread-12): 09:11:25  Parsing macros/materializations/snapshot.sql
+2022-05-10 09:11:25.212002 (Thread-12): 09:11:25  Parsing macros/materializations/view.sql
+2022-05-10 09:11:25.214510 (Thread-12): 09:11:25  Parsing macros/adapters/metadata.sql
+2022-05-10 09:11:25.221381 (Thread-12): 09:11:25  Parsing macros/adapters/columns.sql
+2022-05-10 09:11:25.230896 (Thread-12): 09:11:25  Parsing macros/adapters/freshness.sql
+2022-05-10 09:11:25.233759 (Thread-12): 09:11:25  Parsing macros/adapters/persist_docs.sql
+2022-05-10 09:11:25.238048 (Thread-12): 09:11:25  Parsing macros/adapters/relation.sql
+2022-05-10 09:11:25.247613 (Thread-12): 09:11:25  Parsing macros/adapters/schema.sql
+2022-05-10 09:11:25.249784 (Thread-12): 09:11:25  Parsing macros/adapters/indexes.sql
+2022-05-10 09:11:25.252441 (Thread-12): 09:11:25  Parsing macros/get_custom_name/get_custom_schema.sql
+2022-05-10 09:11:25.254834 (Thread-12): 09:11:25  Parsing macros/get_custom_name/get_custom_alias.sql
+2022-05-10 09:11:25.256299 (Thread-12): 09:11:25  Parsing macros/get_custom_name/get_custom_database.sql
+2022-05-10 09:11:25.257841 (Thread-12): 09:11:25  Parsing macros/etc/datetime.sql
+2022-05-10 09:11:25.265933 (Thread-12): 09:11:25  Parsing macros/etc/statement.sql
+2022-05-10 09:11:25.270227 (Thread-12): 09:11:25  Parsing macros/generic_test_sql/unique.sql
+2022-05-10 09:11:25.270942 (Thread-12): 09:11:25  Parsing macros/generic_test_sql/not_null.sql
+2022-05-10 09:11:25.271502 (Thread-12): 09:11:25  Parsing macros/generic_test_sql/accepted_values.sql
+2022-05-10 09:11:25.272873 (Thread-12): 09:11:25  Parsing macros/generic_test_sql/relationships.sql
+2022-05-10 09:11:25.273744 (Thread-12): 09:11:25  Parsing macros/materializations/configs.sql
+2022-05-10 09:11:25.275978 (Thread-12): 09:11:25  Parsing macros/materializations/hooks.sql
+2022-05-10 09:11:25.279748 (Thread-12): 09:11:25  Parsing macros/materializations/models/table/table.sql
+2022-05-10 09:11:25.287058 (Thread-12): 09:11:25  Parsing macros/materializations/models/table/create_table_as.sql
+2022-05-10 09:11:25.289866 (Thread-12): 09:11:25  Parsing macros/materializations/models/view/create_or_replace_view.sql
+2022-05-10 09:11:25.292467 (Thread-12): 09:11:25  Parsing macros/materializations/models/view/helpers.sql
+2022-05-10 09:11:25.293760 (Thread-12): 09:11:25  Parsing macros/materializations/models/view/create_view_as.sql
+2022-05-10 09:11:25.296002 (Thread-12): 09:11:25  Parsing macros/materializations/models/view/view.sql
+2022-05-10 09:11:25.302965 (Thread-12): 09:11:25  Parsing macros/materializations/models/incremental/incremental.sql
+2022-05-10 09:11:25.312698 (Thread-12): 09:11:25  Parsing macros/materializations/models/incremental/on_schema_change.sql
+2022-05-10 09:11:25.327633 (Thread-12): 09:11:25  Parsing macros/materializations/models/incremental/is_incremental.sql
+2022-05-10 09:11:25.329179 (Thread-12): 09:11:25  Parsing macros/materializations/models/incremental/merge.sql
+2022-05-10 09:11:25.339975 (Thread-12): 09:11:25  Parsing macros/materializations/models/incremental/column_helpers.sql
+2022-05-10 09:11:25.344266 (Thread-12): 09:11:25  Parsing macros/materializations/seeds/helpers.sql
+2022-05-10 09:11:25.359957 (Thread-12): 09:11:25  Parsing macros/materializations/seeds/seed.sql
+2022-05-10 09:11:25.366326 (Thread-12): 09:11:25  Parsing macros/materializations/tests/helpers.sql
+2022-05-10 09:11:25.368074 (Thread-12): 09:11:25  Parsing macros/materializations/tests/test.sql
+2022-05-10 09:11:25.372343 (Thread-12): 09:11:25  Parsing macros/materializations/tests/where_subquery.sql
+2022-05-10 09:11:25.374122 (Thread-12): 09:11:25  Parsing macros/materializations/snapshots/helpers.sql
+2022-05-10 09:11:25.385131 (Thread-12): 09:11:25  Parsing macros/materializations/snapshots/strategies.sql
+2022-05-10 09:11:25.401344 (Thread-12): 09:11:25  Parsing macros/materializations/snapshots/snapshot_merge.sql
+2022-05-10 09:11:25.402940 (Thread-12): 09:11:25  Parsing macros/materializations/snapshots/snapshot.sql
+2022-05-10 09:11:25.414349 (Thread-12): 09:11:25  Parsing tests/generic/builtin.sql
+2022-05-10 09:11:25.612802 (Thread-12): 09:11:25  1699: static parser successfully parsed product_converted_rates.sql
+2022-05-10 09:11:25.624611 (Thread-12): 09:11:25  1699: static parser successfully parsed marts/dim_rates.sql
+2022-05-10 09:11:25.626738 (Thread-12): 09:11:25  1699: static parser successfully parsed marts/dim_products.sql
+2022-05-10 09:11:25.680888 (Thread-12): 09:11:25  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.product_details.marts
+
+2022-05-10 09:11:25.688531 (Thread-12): 09:11:25  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f8087550>]}
+2022-05-10 09:11:26.394719 (Thread-13): handling ps request
+2022-05-10 09:11:26.395105 (Thread-13): 09:11:26  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f80876d0>]}
+2022-05-10 09:11:26.395674 (Thread-13): sending response (<Response 105 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:26.428654 (Thread-14): handling status request
+2022-05-10 09:11:26.429048 (Thread-14): 09:11:26  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f8077670>]}
+2022-05-10 09:11:26.429930 (Thread-14): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:26.548670 (Thread-15): handling status request
+2022-05-10 09:11:26.549057 (Thread-15): 09:11:26  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f80777f0>]}
+2022-05-10 09:11:26.549906 (Thread-15): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:26.613909 (Thread-16): handling status request
+2022-05-10 09:11:26.614253 (Thread-16): 09:11:26  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f8077400>]}
+2022-05-10 09:11:26.615076 (Thread-16): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:28.243881 (Thread-17): handling status request
+2022-05-10 09:11:28.244305 (Thread-17): 09:11:28  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f8077490>]}
+2022-05-10 09:11:28.245173 (Thread-17): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:33.213801 (Thread-18): handling status request
+2022-05-10 09:11:33.215074 (Thread-18): 09:11:33  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f371c1232b0>]}
+2022-05-10 09:11:33.215945 (Thread-18): sending response (<Response 16533 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:33.222149 (Thread-19): handling list request
+2022-05-10 09:11:33.222389 (Thread-19): 09:11:33  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f8077790>]}
+2022-05-10 09:11:33.237540 (Thread-19): 09:11:33  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f80778e0>]}
+2022-05-10 09:11:33.237829 (Thread-19): 09:11:33  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 188 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2022-05-10 09:11:33.240750 (Thread-19): sending response (<Response 1685 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:34.897579 (Thread-20): handling status request
+2022-05-10 09:11:34.897946 (Thread-20): 09:11:34  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f80728b0>]}
+2022-05-10 09:11:34.898811 (Thread-20): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:35.155849 (Thread-21): handling run_sql request
+2022-05-10 09:11:35.156256 (Thread-21): 09:11:35  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f8072880>]}
+2022-05-10 09:11:37.336575 (Thread-21): sending response (<Response 138 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:37.361388 (MainThread): 09:11:37  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '749c1b5f-125a-4f53-8a0d-497b3f3d75b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7feb55abf3d0>]}
+2022-05-10 09:11:37.361913 (MainThread): 09:11:37  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 188 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2022-05-10 09:11:37.362492 (Thread-1): 09:11:37  Acquiring new bigquery connection "rpc.product_prices.request"
+2022-05-10 09:11:37.362638 (Thread-1): 09:11:37  Began compiling node rpc.product_prices.request
+2022-05-10 09:11:37.362744 (Thread-1): 09:11:37  Compiling rpc.product_prices.request
+2022-05-10 09:11:37.363879 (Thread-1): 09:11:37  finished collecting timing info
+2022-05-10 09:11:37.364010 (Thread-1): 09:11:37  Began executing node rpc.product_prices.request
+2022-05-10 09:11:37.364156 (Thread-1): 09:11:37  Opening a new connection, currently in state init
+2022-05-10 09:11:37.368752 (Thread-1): 09:11:37  On rpc.product_prices.request: select * from `opendatasets-349618.exchange_rates.product_prices`
+limit 500
+/* limit added automatically by dbt cloud */
+2022-05-10 09:11:37.670679 (Thread-22): handling poll request
+2022-05-10 09:11:37.671129 (Thread-22): 09:11:37  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f371c0b7940>]}
+2022-05-10 09:11:37.671974 (Thread-22): sending response (<Response 3480 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:38.947170 (Thread-23): handling poll request
+2022-05-10 09:11:38.947593 (Thread-23): 09:11:38  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f8072760>]}
+2022-05-10 09:11:38.948587 (Thread-23): sending response (<Response 397 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:38.986980 (Thread-1): 09:11:38  finished collecting timing info
+2022-05-10 09:11:40.223693 (Thread-24): handling poll request
+2022-05-10 09:11:40.224103 (Thread-24): 09:11:40  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f371c09e9a0>]}
+2022-05-10 09:11:40.224966 (Thread-24): sending response (<Response 3043 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:45.032251 (Thread-25): handling status request
+2022-05-10 09:11:45.032625 (Thread-25): 09:11:45  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f371c09ea30>]}
+2022-05-10 09:11:45.033640 (Thread-25): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:45.300928 (Thread-26): handling run_sql request
+2022-05-10 09:11:45.301298 (Thread-26): 09:11:45  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f8072070>]}
+2022-05-10 09:11:47.495633 (Thread-26): sending response (<Response 138 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:47.519050 (MainThread): 09:11:47  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '320331cc-8f58-43e1-b72e-1fe5431bae85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff47a743280>]}
+2022-05-10 09:11:47.519584 (MainThread): 09:11:47  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 188 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2022-05-10 09:11:47.520174 (Thread-1): 09:11:47  Acquiring new bigquery connection "rpc.product_prices.request"
+2022-05-10 09:11:47.520307 (Thread-1): 09:11:47  Began compiling node rpc.product_prices.request
+2022-05-10 09:11:47.520412 (Thread-1): 09:11:47  Compiling rpc.product_prices.request
+2022-05-10 09:11:47.521582 (Thread-1): 09:11:47  finished collecting timing info
+2022-05-10 09:11:47.521713 (Thread-1): 09:11:47  Began executing node rpc.product_prices.request
+2022-05-10 09:11:47.521826 (Thread-1): 09:11:47  Opening a new connection, currently in state init
+2022-05-10 09:11:47.526437 (Thread-1): 09:11:47  On rpc.product_prices.request: select * from exchange_rates.exchange_rates_2022
+limit 500
+/* limit added automatically by dbt cloud */
+2022-05-10 09:11:47.748662 (Thread-27): handling poll request
+2022-05-10 09:11:47.749146 (Thread-27): 09:11:47  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f9ae0430>]}
+2022-05-10 09:11:47.750009 (Thread-27): sending response (<Response 3463 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:48.761646 (Thread-1): 09:11:48  finished collecting timing info
+2022-05-10 09:11:49.010604 (Thread-28): handling poll request
+2022-05-10 09:11:49.011035 (Thread-28): 09:11:49  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f9ae0ac0>]}
+2022-05-10 09:11:49.013144 (Thread-28): sending response (<Response 18706 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:53.702749 (Thread-29): handling status request
+2022-05-10 09:11:53.703127 (Thread-29): 09:11:53  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f9ae0760>]}
+2022-05-10 09:11:53.704353 (Thread-29): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:54.003404 (Thread-30): handling run_sql request
+2022-05-10 09:11:54.003776 (Thread-30): 09:11:54  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f9ae0460>]}
+2022-05-10 09:11:56.205057 (Thread-30): sending response (<Response 138 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:56.228750 (MainThread): 09:11:56  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0d4c332a-5506-497e-bb53-1db8632e3c76', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f79f8de2670>]}
+2022-05-10 09:11:56.229299 (MainThread): 09:11:56  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 188 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2022-05-10 09:11:56.229888 (Thread-1): 09:11:56  Acquiring new bigquery connection "rpc.product_prices.request"
+2022-05-10 09:11:56.230022 (Thread-1): 09:11:56  Began compiling node rpc.product_prices.request
+2022-05-10 09:11:56.230127 (Thread-1): 09:11:56  Compiling rpc.product_prices.request
+2022-05-10 09:11:56.231282 (Thread-1): 09:11:56  finished collecting timing info
+2022-05-10 09:11:56.231416 (Thread-1): 09:11:56  Began executing node rpc.product_prices.request
+2022-05-10 09:11:56.231529 (Thread-1): 09:11:56  Opening a new connection, currently in state init
+2022-05-10 09:11:56.236111 (Thread-1): 09:11:56  On rpc.product_prices.request: select
+    product_prices.name,
+    product_prices.purchase_date,
+    product_prices.a_price,
+    exchange_rates_2022.base_currency,
+    exchange_rates_2022.target_currency,
+    exchange_rates_2022.exchange_rate * product_prices.a_price as converted_price
+from exchange_rates.exchange_rates_2022
+left join exchange_rates.product_prices 
+on product_prices.purchase_date=exchange_rates_2022.date_date 
+    and product_prices.currency=exchange_rates_2022.base_currency
+limit 500
+/* limit added automatically by dbt cloud */
+2022-05-10 09:11:56.554011 (Thread-31): handling poll request
+2022-05-10 09:11:56.554482 (Thread-31): 09:11:56  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f804e9d0>]}
+2022-05-10 09:11:56.555363 (Thread-31): sending response (<Response 3898 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:56.762220 (Thread-1): 09:11:56  BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest('No matching signature for operator = for argument types: STRING, DATE. Supported signature: ANY = ANY at [10:4]')
+2022-05-10 09:11:57.953359 (Thread-32): handling poll request
+2022-05-10 09:11:57.953764 (Thread-32): 09:11:57  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f804ecd0>]}
+2022-05-10 09:11:57.954286 (Thread-32): sending response (<Response 819 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:11:58.679321 (Thread-1): 09:11:58  finished collecting timing info
+2022-05-10 09:11:58.679566 (Thread-1): Got an exception: Database Error
+  No matching signature for operator = for argument types: STRING, DATE. Supported signature: ANY = ANY at [10:4]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 174, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 549, in _retry_and_handle
+    return retry.retry_target(
+  File "/usr/local/lib/python3.8/dist-packages/google/api_core/retry.py", line 190, in retry_target
+    return target()
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 378, in fn
+    return self._query_and_results(client, sql, conn, job_params)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 535, in _query_and_results
+    iterator = query_job.result(timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/bigquery/job/query.py", line 1499, in result
+    do_get_result()
+  File "/usr/local/lib/python3.8/dist-packages/google/api_core/retry.py", line 283, in retry_wrapped_func
+    return retry_target(
+  File "/usr/local/lib/python3.8/dist-packages/google/api_core/retry.py", line 190, in retry_target
+    return target()
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/bigquery/job/query.py", line 1489, in do_get_result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/google/cloud/bigquery/job/base.py", line 728, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/google/api_core/future/polling.py", line 137, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 No matching signature for operator = for argument types: STRING, DATE. Supported signature: ANY = ANY at [10:4]
+
+Location: europe-west3
+Job ID: c76db64d-8a26-4b35-b3f1-8ef427876ff6
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 389, in execute
+    query_job, iterator = self.raw_execute(sql, fetch=fetch)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 380, in raw_execute
+    query_job, iterator = self._retry_and_handle(msg=sql, conn=conn, fn=fn)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 549, in _retry_and_handle
+    return retry.retry_target(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 178, in exception_handler
+    self.handle_error(e, message)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/bigquery/connections.py", line 166, in handle_error
+    raise DatabaseException(error_msg)
+dbt.exceptions.DatabaseException: Database Error
+  No matching signature for operator = for argument types: STRING, DATE. Supported signature: ANY = ANY at [10:4]
+2022-05-10 09:11:58.681510 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': 'Database Error in rpc request (from remote system)\n  No matching signature for operator = for argument types: STRING, DATE. Supported signature: ANY = ANY at [10:4]', 'raw_sql': 'select\n    product_prices.name,\n    product_prices.purchase_date,\n    product_prices.a_price,\n    exchange_rates_2022.base_currency,\n    exchange_rates_2022.target_currency,\n    exchange_rates_2022.exchange_rate * product_prices.a_price as converted_price\nfrom exchange_rates.exchange_rates_2022\nleft join exchange_rates.product_prices \non product_prices.purchase_date=exchange_rates_2022.date_date \n    and product_prices.currency=exchange_rates_2022.base_currency\nlimit 500\n/* limit added automatically by dbt cloud */', 'compiled_sql': 'select\n    product_prices.name,\n    product_prices.purchase_date,\n    product_prices.a_price,\n    exchange_rates_2022.base_currency,\n    exchange_rates_2022.target_currency,\n    exchange_rates_2022.exchange_rate * product_prices.a_price as converted_price\nfrom exchange_rates.exchange_rates_2022\nleft join exchange_rates.product_prices \non product_prices.purchase_date=exchange_rates_2022.date_date \n    and product_prices.currency=exchange_rates_2022.base_currency\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': 'Database Error in rpc request (from remote system)\n  No matching signature for operator = for argument types: STRING, DATE. Supported signature: ANY = ANY at [10:4]', 'raw_sql': 'select\n    product_prices.name,\n    product_prices.purchase_date,\n    product_prices.a_price,\n    exchange_rates_2022.base_currency,\n    exchange_rates_2022.target_currency,\n    exchange_rates_2022.exchange_rate * product_prices.a_price as converted_price\nfrom exchange_rates.exchange_rates_2022\nleft join exchange_rates.product_prices \non product_prices.purchase_date=exchange_rates_2022.date_date \n    and product_prices.currency=exchange_rates_2022.base_currency\nlimit 500\n/* limit added automatically by dbt cloud */', 'compiled_sql': 'select\n    product_prices.name,\n    product_prices.purchase_date,\n    product_prices.a_price,\n    exchange_rates_2022.base_currency,\n    exchange_rates_2022.target_currency,\n    exchange_rates_2022.exchange_rate * product_prices.a_price as converted_price\nfrom exchange_rates.exchange_rates_2022\nleft join exchange_rates.product_prices \non product_prices.purchase_date=exchange_rates_2022.date_date \n    and product_prices.currency=exchange_rates_2022.base_currency\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+2022-05-10 09:11:59.223485 (Thread-33): handling poll request
+2022-05-10 09:11:59.223860 (Thread-33): 09:11:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f804e9a0>]}
+2022-05-10 09:11:59.224541 (Thread-33): sending response (<Response 13527 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:13:34.556807 (Thread-34): handling status request
+2022-05-10 09:13:34.558140 (Thread-34): 09:13:34  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f804e5e0>]}
+2022-05-10 09:13:34.559152 (Thread-34): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:13:34.851989 (Thread-35): handling run_sql request
+2022-05-10 09:13:34.852422 (Thread-35): 09:13:34  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36f804e610>]}
+2022-05-10 09:13:37.027481 (Thread-35): sending response (<Response 138 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:13:37.052854 (MainThread): 09:13:37  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '43f80b58-ce93-4dab-ae13-f2541167bcda', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa973d36670>]}
+2022-05-10 09:13:37.053387 (MainThread): 09:13:37  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 188 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2022-05-10 09:13:37.053973 (Thread-1): 09:13:37  Acquiring new bigquery connection "rpc.product_prices.request"
+2022-05-10 09:13:37.054107 (Thread-1): 09:13:37  Began compiling node rpc.product_prices.request
+2022-05-10 09:13:37.054222 (Thread-1): 09:13:37  Compiling rpc.product_prices.request
+2022-05-10 09:13:37.055404 (Thread-1): 09:13:37  finished collecting timing info
+2022-05-10 09:13:37.055537 (Thread-1): 09:13:37  Began executing node rpc.product_prices.request
+2022-05-10 09:13:37.055649 (Thread-1): 09:13:37  Opening a new connection, currently in state init
+2022-05-10 09:13:37.060265 (Thread-1): 09:13:37  On rpc.product_prices.request: select
+    product_prices.name,
+    product_prices.purchase_date,
+    product_prices.a_price,
+    exchange_rates_2022.base_currency,
+    exchange_rates_2022.target_currency,
+    exchange_rates_2022.exchange_rate * product_prices.a_price as converted_price
+from exchange_rates.exchange_rates_2022
+left join exchange_rates.product_prices 
+on product_prices.purchase_date=exchange_rates_2022.date_date 
+    and product_prices.currency=exchange_rates_2022.base_currency
+limit 500
+/* limit added automatically by dbt cloud */
+2022-05-10 09:13:37.444393 (Thread-36): handling poll request
+2022-05-10 09:13:37.444893 (Thread-36): 09:13:37  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba9d06d0>]}
+2022-05-10 09:13:37.445726 (Thread-36): sending response (<Response 3898 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:13:38.391469 (Thread-1): 09:13:38  finished collecting timing info
+2022-05-10 09:13:38.707885 (Thread-37): handling poll request
+2022-05-10 09:13:38.708297 (Thread-37): 09:13:38  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba9d6550>]}
+2022-05-10 09:13:38.709433 (Thread-37): sending response (<Response 20327 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:13:55.498721 (Thread-38): handling status request
+2022-05-10 09:13:55.499982 (Thread-38): 09:13:55  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba9d6760>]}
+2022-05-10 09:13:55.527044 (Thread-38): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:13:55.834263 (Thread-39): handling run_sql request
+2022-05-10 09:13:55.834644 (Thread-39): 09:13:55  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba9d69a0>]}
+2022-05-10 09:13:58.041677 (Thread-39): sending response (<Response 138 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:13:58.065401 (MainThread): 09:13:58  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ccbf9745-fed1-4458-b6cc-a290fb73d235', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff3145ba280>]}
+2022-05-10 09:13:58.065932 (MainThread): 09:13:58  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 188 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2022-05-10 09:13:58.066510 (Thread-1): 09:13:58  Acquiring new bigquery connection "rpc.product_prices.request"
+2022-05-10 09:13:58.066645 (Thread-1): 09:13:58  Began compiling node rpc.product_prices.request
+2022-05-10 09:13:58.066750 (Thread-1): 09:13:58  Compiling rpc.product_prices.request
+2022-05-10 09:13:58.067906 (Thread-1): 09:13:58  finished collecting timing info
+2022-05-10 09:13:58.068042 (Thread-1): 09:13:58  Began executing node rpc.product_prices.request
+2022-05-10 09:13:58.068194 (Thread-1): 09:13:58  Opening a new connection, currently in state init
+2022-05-10 09:13:58.072754 (Thread-1): 09:13:58  On rpc.product_prices.request: select
+    product_prices.name,
+    product_prices.purchase_date,
+    product_prices.a_price,
+    exchange_rates_2022.base_currency,
+    exchange_rates_2022.target_currency,
+    exchange_rates_2022.exchange_rate * product_prices.a_price as converted_price
+from exchange_rates.product_prices
+left join exchange_rates.exchange_rates_2022 
+on product_prices.purchase_date=exchange_rates_2022.date_date 
+    and product_prices.currency=exchange_rates_2022.base_currency
+limit 500
+/* limit added automatically by dbt cloud */
+2022-05-10 09:13:58.397010 (Thread-40): handling poll request
+2022-05-10 09:13:58.397448 (Thread-40): 09:13:58  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba9f5b80>]}
+2022-05-10 09:13:58.398302 (Thread-40): sending response (<Response 3898 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:13:59.125586 (Thread-1): 09:13:59  finished collecting timing info
+2022-05-10 09:13:59.680425 (Thread-41): handling poll request
+2022-05-10 09:13:59.680797 (Thread-41): 09:13:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba97f1c0>]}
+2022-05-10 09:13:59.681612 (Thread-41): sending response (<Response 4731 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:14:04.482515 (Thread-42): handling status request
+2022-05-10 09:14:04.482904 (Thread-42): 09:14:04  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba97f3a0>]}
+2022-05-10 09:14:04.484283 (Thread-42): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:14:04.542358 (Thread-43): handling ps request
+2022-05-10 09:14:04.542745 (Thread-43): 09:14:04  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba9f5fd0>]}
+2022-05-10 09:14:04.543456 (Thread-43): sending response (<Response 2961 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:14:05.997051 (Thread-44): handling status request
+2022-05-10 09:14:05.997464 (Thread-44): 09:14:05  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba9f58e0>]}
+2022-05-10 09:14:05.998355 (Thread-44): sending response (<Response 16555 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:14:07.673090 (Thread-45): 09:14:07  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+2022-05-10 09:14:07.673313 (Thread-45): 09:14:07  Partial parsing enabled, no changes found, skipping parsing
+2022-05-10 09:14:07.673698 (Thread-45): 09:14:07  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.product_details.marts
+
+2022-05-10 09:14:07.678500 (Thread-45): 09:14:07  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba92cf40>]}
+2022-05-10 09:14:08.260825 (Thread-46): handling status request
+2022-05-10 09:14:08.261208 (Thread-46): 09:14:08  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba964cd0>]}
+2022-05-10 09:14:08.261703 (Thread-46): sending response (<Response 1680 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:14:08.381568 (Thread-47): handling status request
+2022-05-10 09:14:08.381927 (Thread-47): 09:14:08  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba964a60>]}
+2022-05-10 09:14:08.382401 (Thread-47): sending response (<Response 1680 bytes [200 OK]>) to 10.0.25.226
+2022-05-10 09:14:29.598459 (Thread-48): handling status request
+2022-05-10 09:14:29.598881 (Thread-48): 09:14:29  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': '3a6c0f0e-4246-4ddf-ab8d-943f6cb66a3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f36ba995940>]}
+2022-05-10 09:14:29.599375 (Thread-48): sending response (<Response 1680 bytes [200 OK]>) to 10.0.25.226
