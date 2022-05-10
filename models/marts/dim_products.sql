@@ -1,1 +1,1 @@
-select * from exchange_rates.products_prices
+select * from `opendatasets-349618.exchange_rates.product_prices`

@@ -1,5 +1,6 @@
 name: product_prices
 config-version: 2
+version: 1.0.6
 models:
   product_details: # this matches the `name:`` config
     marts:
