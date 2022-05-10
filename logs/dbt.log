@@ -1,0 +1,9 @@
+
+
+============================== 2022-05-10 06:35:41.054917 | eae3ced3-177d-49e6-bafc-f8c9839925b5 ==============================
+06:35:41.054917 [info ] [MainThread]: Running with dbt=1.0.1
+06:35:41.055288 [debug] [MainThread]: running dbt with arguments Namespace(cls=<class 'dbt.task.init.InitTask'>, debug=None, defer=None, event_buffer_size=None, fail_fast=None, log_cache_events=False, log_format=None, partial_parse=None, printer_width=None, profile=None, profiles_dir='/home/praveer/.dbt', project_dir=None, project_name='.', record_timing_info=None, rpc_method=None, send_anonymous_usage_stats=None, single_threaded=False, skip_profile_setup=False, state=None, static_parser=None, target=None, use_colors=None, use_experimental_parser=None, vars='{}', version_check=None, warn_error=None, which='init', write_json=None)
+06:35:41.055462 [debug] [MainThread]: Tracking: tracking
+06:35:41.066377 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd54188070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd541880d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd54188280>]}
+06:35:41.066950 [info ] [MainThread]: A project called . already exists here.
+06:35:41.067318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd541881f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd54188640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd541887f0>]}

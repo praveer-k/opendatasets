@@ -1,0 +1,1 @@
+select * from exchange_rates.exchange_rates_2022

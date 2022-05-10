@@ -1,0 +1,6 @@
+name: product_prices
+config-version: 2
+models:
+  product_details: # this matches the `name:`` config
+    marts:
+      +materialized: table # this applies to all models in the `marts/` directory
